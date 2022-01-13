@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="infs_stylesheet.css">  
+</head>
+<body>
+
+		<center>
+		<img src="Hogwart_logo.png" usemap="#logo" class="img">
+		<map name="logo">
+		 <area shape="rect" coords="2,2,250,250" alt="logo" href="index.html">
+		</center>	
+
+<div class="p1">
+	<center>
+	<h1 style="font-size:60px; color:#c39a65"> INFRASTRUCTURE </h1>
+	</center>
+</div>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <img src="dinn.jpg" style="width:100%">
+  <div class="text"><h1>GREAT HALL</h1></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="library.png" style="width:100%">
+  <div class="text"><h1>LIBRARY</h1></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 4</div>
+  <img src="potions.jpg" style="width:100%">
+  <div class="text"><h1>POTIONS HALL</h1></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 4</div>
+  <img src="staircase.jpg" style="width:100%">
+  <div class="text"><h1>STAIRCASE</h1></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+</body>
+</html> 

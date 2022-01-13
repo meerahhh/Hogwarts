@@ -1,0 +1,72 @@
+<html>
+     <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="crow_stylesheet.css"> 
+	 </head>
+<body>
+	
+		<img src="Hogwart_logo.png" usemap="#logo" class="img">
+		<map name="logo">
+		 <area shape="rect" coords="2,2,250,250" alt="logo" href="index.html">	
+		<h1>ADMISSION FOR HOGWARTS</h1>
+		
+	 <form>
+     <label>
+        <input name="name" id="name" type="text" required />
+        <div class="label-text">Full Name</div>
+     </label>
+     <label>
+        <input type="age" name="age" id="age" required />
+        <div class="label-text">Age</div>
+     </label>
+	 <label>
+        <input type="Wand" name="Wand" id="" required />
+        <div class="label-text">Wand</div>
+     </label>
+	 <label>
+        <input type="Bloodtype" name="Bloodtype" id="Bloodtype" required />
+        <div class="label-text">Bloodtype</div>
+     </label>
+	 <tr>
+	 <h1 td>School Subjects<br><br></td>
+	 </tr>
+	 <div class="radios-boxes">
+  <div class="radios">
+    <input type="radio" name="radio" id="radio1" class="radio" value="r">
+    <input type="radio" name="radio" id="radio2" class="radio" value="k">
+    <input type="radio" name="radio" id="radio3" class="radio" value="t">
+    <input type="radio" name="radio" id="radio4" class="radio" value="s">
+    <div class="ball"></div>
+  </div>
+  <div class="labels">
+    <label for="radio1" class="label">HISTORY OF MAGIC</label>
+    <label for="radio2" class="label">FLYING INSTRUCTOR</label>
+    <label for="radio3" class="label">QUIDDITCH</label>
+    <label for="radio4" class="label">SEEKER</label>
+  </div>
+</div>
+<script>
+    
+    let radios = document.querySelectorAll('.radio');
+let labels = document.querySelectorAll('.label');
+let ball = document.querySelector('.ball');
+let prevRadio, prevLabel;
+radios.forEach((radio, index) => {
+  radio.addEventListener('click', function(e) {
+    if (prevRadio) prevRadio.classList.toggle('active');
+    if (prevLabel) prevLabel.classList.toggle('active');
+    radio.classList.toggle('active');
+    prevRadio = radio;
+    labels[index].classList.toggle('active');
+    prevLabel = labels[index];
+    ball.className = `ball pos${index}`;
+  });
+});
+    </script>
+	 <div class="center">
+     <button type="submit" value="Submit">Submit</button>
+	 <button type="reset" value="reset">Reset</button>
+	 </div>
+     </form>
+</body>
+</html>

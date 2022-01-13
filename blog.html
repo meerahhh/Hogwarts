@@ -1,0 +1,84 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="blog_stylesheet.css">  
+</head>
+<body>
+	<Body background="blog.jpg";> 
+		<center>
+		<img src="Hogwart_logo.png" usemap="#logo" class="img" style="align:left";>
+		<map name="logo">
+		<area shape="rect" coords="2,2,250,250" alt="logo" href="index.html">
+		</center>
+		<h1 style="text-align:center;color:white"><i><b>BLOG</i></b></h1>	
+		
+		<div class="slideshow-container">
+
+		<div class="mySlides">
+		  <q>I solemnly swear I am up to no good.</q>
+		  <p class="author">-Harry Potter</p>
+		</div>
+
+		<div class="mySlides">
+		  <q>Don't let the muggles get you down.</q>
+		  <p class="author">-Ron Weasley</p>
+		</div>
+
+		<div class="mySlides">
+		  <q>I mean, it's sort of exciting, isn't it, breaking the rules?</q>
+		  <p class="author">-Hermione Granger</p>
+		</div>
+
+		<div class="mySlides">
+		  <q>Curiosity is not a sin... But we should exercise caution with our curiosity...yes,indeed.</q>
+		  <p class="author">-Albus Dumbledore</p>
+		</div>
+
+		<div class="mySlides">
+		  <q>All was well</q>
+		  <p class="author">-J K Rowling</p>
+		</div>
+		<a class="prev" onclick="plusSlides(-1)"><</a>
+		<a class="next" onclick="plusSlides(1)">></a>
+
+		</div>
+
+		<div class="dot-container">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		  <span class="dot" onclick="currentSlide(4)"></span>
+		  <span class="dot" onclick="currentSlide(5)"></span>  
+		</div>
+
+			<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			}
+			</script>
+
+</body>
+</html> 
